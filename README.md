@@ -11,7 +11,15 @@ A simple VPC config with Private Subnets reaching the internet using a NAT Gatew
 
 ## Requirements
 
+- [terraform >= v0.14.7](https://www.terraform.io/downloads.html)
+
 ## Installation
+
+1. Initialize Terraform
+
+```sh
+terraform init
+```
 
 ## Usage
 
