@@ -27,6 +27,36 @@ resource "aws_vpc" "vpc_us_east_1" {
   }
 }
 
+resource "aws_default_network_acl" "default_network_acl" {
+  default_network_acl_id = aws_vpc.vpc_us_east_1.default_network_acl_id
+
+  ingress {
+    protocol   = -1
+    rule_no    = 100
+    action     = "allow"
+    cidr_block = "0.0.0.0/0"
+    from_port  = 0
+    to_port    = 0
+  }
+
+  egress {
+    protocol   = -1
+    rule_no    = 100
+    action     = "allow"
+    cidr_block = "0.0.0.0/0"
+    from_port  = 0
+    to_port    = 0
+  }
+
+  tags = {
+    "MadeBy"          = "terraform_general_cli_user"
+    "MadeWith"        = "terraform"
+    "Module/Resource" = "default_network_acl"
+    "Project"         = "aws_nat_gateway"
+    "Name"            = "default_network_acl"
+  }
+}
+
 resource "aws_route_table" "main_route_table" {
   vpc_id = aws_vpc.vpc_us_east_1.id
 
