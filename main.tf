@@ -31,20 +31,20 @@ resource "aws_default_network_acl" "default_network_acl" {
   default_network_acl_id = aws_vpc.us_east_1_vpc.default_network_acl_id
 
   ingress {
-    protocol   = -1
-    rule_no    = 100
     action     = "allow"
     cidr_block = "0.0.0.0/0"
     from_port  = 0
+    protocol   = -1
+    rule_no    = 100
     to_port    = 0
   }
 
   egress {
-    protocol   = -1
-    rule_no    = 100
     action     = "allow"
     cidr_block = "0.0.0.0/0"
     from_port  = 0
+    protocol   = -1
+    rule_no    = 100
     to_port    = 0
   }
 
@@ -67,6 +67,34 @@ resource "aws_default_route_table" "default_route_table" {
     "Project"         = "aws_nat_gateway"
     "Name"            = "default_route_table"
   }
+}
+
+resource "aws_default_security_group" "default_security_group" {
+  vpc_id = aws_vpc.us_east_1_vpc.id
+
+  ingress = [{
+    cidr_blocks      = []
+    description      = "Allow inbound traffic from network interfaces (and their associated instances) that are assigned to the same security group."
+    from_port        = 0
+    ipv6_cidr_blocks = []
+    prefix_list_ids  = []
+    protocol         = -1
+    security_groups  = []
+    self             = true
+    to_port          = 0
+  }]
+
+  egress = [{
+    cidr_blocks      = ["0.0.0.0/0"]
+    description      = "Allow all outbound IPv4 traffic."
+    from_port        = 0
+    ipv6_cidr_blocks = []
+    prefix_list_ids  = []
+    protocol         = -1
+    security_groups  = []
+    self             = false
+    to_port          = 0
+  }]
 }
 
 resource "aws_route_table" "main_route_table" {
