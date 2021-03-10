@@ -37,3 +37,8 @@ resource "aws_route_table" "main_route_table" {
     "Name"            = "main_route_table"
   }
 }
+
+resource "aws_main_route_table_association" "main_route_table_and_vpc_us_east_1_association" {
+  vpc_id         = aws_vpc.vpc_us_east_1.id
+  route_table_id = aws_route_table.main_route_table.id
+}
