@@ -13,7 +13,7 @@ provider "aws" {
   profile                 = var.aws_profile_name
 }
 
-resource "aws_vpc" "vpc_us_east_1" {
+resource "aws_vpc" "us_east_1_vpc" {
   cidr_block         = "10.0.0.0/16"
   instance_tenancy   = "default"
   enable_dns_support = true
@@ -23,12 +23,12 @@ resource "aws_vpc" "vpc_us_east_1" {
     "MadeWith"        = "terraform"
     "Module/Resource" = "vpc"
     "Project"         = "aws_nat_gateway"
-    "Name"            = "vpc_us_east_1"
+    "Name"            = "us_east_1_vpc"
   }
 }
 
 resource "aws_default_network_acl" "default_network_acl" {
-  default_network_acl_id = aws_vpc.vpc_us_east_1.default_network_acl_id
+  default_network_acl_id = aws_vpc.us_east_1_vpc.default_network_acl_id
 
   ingress {
     protocol   = -1
@@ -57,8 +57,20 @@ resource "aws_default_network_acl" "default_network_acl" {
   }
 }
 
+resource "aws_default_route_table" "default_route_table" {
+  default_route_table_id = aws_vpc.us_east_1_vpc.default_route_table_id
+
+  tags = {
+    "MadeBy"          = "terraform_general_cli_user"
+    "MadeWith"        = "terraform"
+    "Module/Resource" = "default_route_table"
+    "Project"         = "aws_nat_gateway"
+    "Name"            = "default_route_table"
+  }
+}
+
 resource "aws_route_table" "main_route_table" {
-  vpc_id = aws_vpc.vpc_us_east_1.id
+  vpc_id = aws_vpc.us_east_1_vpc.id
 
   tags = {
     "MadeBy"          = "terraform_general_cli_user"
@@ -69,7 +81,7 @@ resource "aws_route_table" "main_route_table" {
   }
 }
 
-resource "aws_main_route_table_association" "main_route_table_and_vpc_us_east_1_association" {
-  vpc_id         = aws_vpc.vpc_us_east_1.id
+resource "aws_main_route_table_association" "main_route_table_and_us_east_1_vpc_association" {
+  vpc_id         = aws_vpc.us_east_1_vpc.id
   route_table_id = aws_route_table.main_route_table.id
 }
