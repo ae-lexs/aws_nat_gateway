@@ -25,3 +25,15 @@ resource "aws_vpc" "vpc_us_east_1" {
     "Name"            = "vpc_us_east_1"
   }
 }
+
+resource "aws_route_table" "main_route_table" {
+  vpc_id = aws_vpc.vpc_us_east_1.id
+
+  tags = {
+    "MadeBy"          = "terraform_general_cli_user"
+    "MadeWith"        = "terraform"
+    "Module/Resource" = "aws_route_table"
+    "Project"         = "aws_nat_gateway"
+    "Name"            = "main_route_table"
+  }
+}
