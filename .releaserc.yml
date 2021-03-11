@@ -1,5 +1,5 @@
-branch: main
-repositoryUrl: https://github.com/alex-airbnb/golang_spike_project
+branches: main
+repositoryUrl: https://github.com/ae-lexs/aws_nat_gateway
 plugins:
     - '@semantic-release/commit-analyzer'
     - '@semantic-release/release-notes-generator'

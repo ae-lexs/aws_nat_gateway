@@ -1,0 +1,75 @@
+version: 2.1
+
+executors:
+  node:
+    docker:
+      - image: circleci/node:14.15.5
+  ubuntu:
+    docker:
+      - image: ubuntu:18.04
+
+commands:
+  setup_terraform:
+    description: 'Install and update all the required packages to install terraform'
+    steps:
+      - run:
+          name: 'Upgrade all the Ubuntu packages'
+          command: |
+            apt update
+            apt upgrade --yes
+      - run:
+          name: 'Install wget and unzip'
+          command: apt install wget unzip --yes
+      - run:
+          name: 'Download the Terraform ZIP'
+          command: wget https://releases.hashicorp.com/terraform/0.14.7/terraform_0.14.7_linux_amd64.zip
+      - run:
+          name: 'Unzip terraform_0.14.7_linux_amd64.zip and move to /usr/bin'
+          command: |
+            unzip terraform_0.14.7_linux_amd64.zip
+            mv terraform /usr/bin
+      - run:
+          name: 'Show the Terraform version'
+          command: terraform -v
+      - run:
+          name: 'Initialize Terraform'
+          command: terraform init
+      - run:
+          name: 'Install the local modules'
+          command: terraform get
+
+jobs:
+  generate_release:
+    executor: node
+    steps:
+      - checkout
+      - run:
+          name: 'Generate Release'
+          command: |
+            sudo npm i -g @semantic-release/changelog @semantic-release/git semantic-release
+            semantic-release          
+
+  terraform_validate:
+    executor: ubuntu
+    steps:
+      - checkout
+      - setup_terraform
+      - run:
+          name: 'Run the Terraform validator'
+          command: terraform validate
+
+workflows:
+  version: 2
+
+  development:
+    jobs:
+      - terraform_validate:
+          filters:
+            branches:
+              only: main
+      - generate_release:
+          requires:
+            - terraform_validate
+          filters:
+            branches:
+              only: main
