@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/ae-lexs/aws_nat_gateway/compare/v1.0.0...v1.1.0) (2021-03-11)
+
+
+### Features
+
+* Add CircleCI badge to the README. ([0ea3d10](https://github.com/ae-lexs/aws_nat_gateway/commit/0ea3d1054df3325a33f06a30224433991a7c6c98))
+
 # 1.0.0 (2021-03-11)
 
 
