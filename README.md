@@ -17,13 +17,25 @@ A simple VPC config with Private Subnets reaching the internet using a NAT Gatew
 
 ## Installation
 
-1. Initialize Terraform
+1. Initialize the project:
 
 ```sh
 terraform init
 ```
 
-## Usage
+2. Install local modules
+
+```sh
+terraform get
+```
+
+## Inputs
+
+| Name                      | Description                                                        |  Type  |      Default       |      Required      |
+| :------------------------ | :----------------------------------------------------------------- | :----: | :----------------: | :----------------: |
+| aws_credentials_file_path | Path of the AWS Credentials file                                   | string | ~/.aws/credentials |        :x:         |
+| aws_profile_name          | Name of one of the configured profiles in the AWS Credentials file | string |         -          | :heavy_check_mark: |
+| aws_region                | AWS Region                                                         | string |     us-east-1      |        :x:         |
 
 ## License
 
