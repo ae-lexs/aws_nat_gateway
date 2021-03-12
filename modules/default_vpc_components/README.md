@@ -22,11 +22,11 @@ terraform get
 
 ## Inputs
 
-| Name           | Description                       | Type   | Default | Required           |
-| -------------- | --------------------------------- | ------ | ------- | ------------------ |
-| network_acl_id | Default Network ACL ID of the VPC | string | -       | :heavy_check_mark: |
-| route_table_id | Default Route Table ID of the VPC | string | -       | :heavy_check_mark: |
-| vpc_id         | VPC ID                            | string | -       | :heavy_check_mark: |
+| Name           | Description                       |  Type  | Default |      Required      |
+| :------------- | :-------------------------------- | :----: | :-----: | :----------------: |
+| network_acl_id | Default Network ACL ID of the VPC | string |    -    | :heavy_check_mark: |
+| route_table_id | Default Route Table ID of the VPC | string |    -    | :heavy_check_mark: |
+| vpc_id         | VPC ID                            | string |    -    | :heavy_check_mark: |
 
 ## License
 
