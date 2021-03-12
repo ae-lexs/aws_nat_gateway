@@ -8,9 +8,10 @@ terraform {
 }
 
 provider "aws" {
-  region                  = var.aws_region
-  shared_credentials_file = var.aws_credentials_file_path
-  profile                 = var.aws_profile_name
+  region     = var.aws_region
+  access_key = var.aws_access_key_id
+  secret_key = var.aws_access_secret_key
+  profile    = var.aws_profile_name
 }
 
 module "networking" {

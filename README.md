@@ -31,11 +31,12 @@ terraform get
 
 ## Inputs
 
-| Name                      | Description                                                        |  Type  |      Default       |      Required      |
-| :------------------------ | :----------------------------------------------------------------- | :----: | :----------------: | :----------------: |
-| aws_credentials_file_path | Path of the AWS Credentials file                                   | string | ~/.aws/credentials |        :x:         |
-| aws_profile_name          | Name of one of the configured profiles in the AWS Credentials file | string |         -          | :heavy_check_mark: |
-| aws_region                | AWS Region                                                         | string |     us-east-1      |        :x:         |
+| Name                  | Description                    |  Type  |  Default  |      Required      |
+| :-------------------- | :----------------------------- | :----: | :-------: | :----------------: |
+| aws_access_key_id     | AWS Access Key ID              | string |     -     | :heavy_check_mark: |
+| aws_access_secret_key | AWS Access Secret Key          | string |     -     | :heavy_check_mark: |
+| aws_profile_name      | Name of one of the AWS Profile | string |     -     | :heavy_check_mark: |
+| aws_region            | AWS Region                     | string | us-east-1 |        :x:         |
 
 ## License
 

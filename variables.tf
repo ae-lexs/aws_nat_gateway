@@ -1,11 +1,15 @@
-variable "aws_credentials_file_path" {
-  description = "Path of the AWS Credentials file"
+variable "aws_access_key_id" {
+  description = "AWS Access Key ID"
   type        = string
-  default     = "~/.aws/credentials"
+}
+
+variable "aws_access_secret_key" {
+  description = "AWS Access Secret Key"
+  type        = string
 }
 
 variable "aws_profile_name" {
-  description = "Name of one of the configured profiles in the AWS Credentials file"
+  description = "AWS Profile Name"
   type        = string
 }
 
