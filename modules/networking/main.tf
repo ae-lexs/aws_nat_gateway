@@ -8,7 +8,7 @@ resource "aws_vpc" "vpc" {
     "MadeWith"        = "terraform"
     "Module/Resource" = "vpc"
     "Project"         = "aws_nat_gateway"
-    "Name"            = "vpc"
+    "Name"            = "aws_nat_gateway_vpc"
   }
 }
 

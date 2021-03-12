@@ -6,7 +6,7 @@ resource "aws_route_table" "main_route_table" {
     "MadeWith"        = "terraform"
     "Module/Resource" = "main_route_table"
     "Project"         = "aws_nat_gateway"
-    "Name"            = "main_route_table"
+    "Name"            = "aws_nat_gateway_main_route_table"
   }
 }
 
