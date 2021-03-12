@@ -1,3 +1,10 @@
+## [1.4.2](https://github.com/ae-lexs/aws_nat_gateway/compare/v1.4.1...v1.4.2) (2021-03-12)
+
+
+### Performance Improvements
+
+* Update the name of the resources. ([06eb19e](https://github.com/ae-lexs/aws_nat_gateway/commit/06eb19e391774e515ceffa7423114fbaead9bc20))
+
 ## [1.4.1](https://github.com/ae-lexs/aws_nat_gateway/compare/v1.4.0...v1.4.1) (2021-03-12)
 
 
