@@ -20,7 +20,7 @@ resource "aws_default_network_acl" "default_network_acl" {
   }
 
   tags = {
-    "MadeBy"          = "terraform_general_cli_user"
+    "MadeBy"          = var.made_by
     "MadeWith"        = "terraform"
     "Module/Resource" = "default_vpc_components"
     "Project"         = "aws_nat_gateway"
@@ -32,7 +32,7 @@ resource "aws_default_route_table" "default_route_table" {
   default_route_table_id = var.route_table_id
 
   tags = {
-    "MadeBy"          = "terraform_general_cli_user"
+    "MadeBy"          = var.made_by
     "MadeWith"        = "terraform"
     "Module/Resource" = "default_vpc_components"
     "Project"         = "aws_nat_gateway"
@@ -68,7 +68,7 @@ resource "aws_default_security_group" "default_security_group" {
   }]
 
   tags = {
-    "MadeBy"          = "terraform_general_cli_user"
+    "MadeBy"          = var.made_by
     "MadeWith"        = "terraform"
     "Module/Resource" = "default_vpc_components"
     "Project"         = "aws_nat_gateway"
