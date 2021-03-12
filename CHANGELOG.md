@@ -1,3 +1,10 @@
+## [1.4.1](https://github.com/ae-lexs/aws_nat_gateway/compare/v1.4.0...v1.4.1) (2021-03-12)
+
+
+### Performance Improvements
+
+* Update the variables of the main module. ([62523fd](https://github.com/ae-lexs/aws_nat_gateway/commit/62523fd301f78defb02f44ee5dc3026dfbd5d8d5))
+
 # [1.4.0](https://github.com/ae-lexs/aws_nat_gateway/compare/v1.3.0...v1.4.0) (2021-03-12)
 
 
