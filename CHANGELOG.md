@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/ae-lexs/aws_nat_gateway/compare/v1.3.0...v1.4.0) (2021-03-12)
+
+
+### Features
+
+* Add networking module. ([ef9fa8c](https://github.com/ae-lexs/aws_nat_gateway/commit/ef9fa8c5c37b8ef0bcad18b525fb0d7f844d6add))
+
 # [1.3.0](https://github.com/ae-lexs/aws_nat_gateway/compare/v1.2.1...v1.3.0) (2021-03-12)
 
 
