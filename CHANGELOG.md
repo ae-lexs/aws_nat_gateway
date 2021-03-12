@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/ae-lexs/aws_nat_gateway/compare/v1.1.0...v1.2.0) (2021-03-12)
+
+
+### Features
+
+* Add default_vpc_components module. ([616303e](https://github.com/ae-lexs/aws_nat_gateway/commit/616303e24b83eed87fa4520f96a2ba5580808322))
+
 # [1.1.0](https://github.com/ae-lexs/aws_nat_gateway/compare/v1.0.0...v1.1.0) (2021-03-11)
 
 
