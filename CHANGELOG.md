@@ -1,3 +1,16 @@
+# [1.3.0](https://github.com/ae-lexs/aws_nat_gateway/compare/v1.2.1...v1.3.0) (2021-03-12)
+
+
+### Features
+
+* Add made_by variable to default_vpc_components module. ([b783322](https://github.com/ae-lexs/aws_nat_gateway/commit/b783322c0261d117fa51afe2cdeb8068edc62d2a))
+* Add main_route_table module. ([64244bf](https://github.com/ae-lexs/aws_nat_gateway/commit/64244bff0804519c25b27d044aeeab5b03e89d83))
+
+
+### Performance Improvements
+
+* Add tags to the default_security_group resource. ([635202e](https://github.com/ae-lexs/aws_nat_gateway/commit/635202e6a0e335279beb817819c5bbad032fd49a))
+
 ## [1.2.1](https://github.com/ae-lexs/aws_nat_gateway/compare/v1.2.0...v1.2.1) (2021-03-12)
 
 
