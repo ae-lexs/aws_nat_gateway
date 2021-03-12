@@ -1,3 +1,11 @@
+## [1.2.1](https://github.com/ae-lexs/aws_nat_gateway/compare/v1.2.0...v1.2.1) (2021-03-12)
+
+
+### Performance Improvements
+
+* Update main README. ([b7a116b](https://github.com/ae-lexs/aws_nat_gateway/commit/b7a116be6466b5f11729d04721cf3385bb4fba43))
+* Update the default_vpc_components README. ([0e3f600](https://github.com/ae-lexs/aws_nat_gateway/commit/0e3f600a917854adbf779adbaa94bfa59398c7e1))
+
 # [1.2.0](https://github.com/ae-lexs/aws_nat_gateway/compare/v1.1.0...v1.2.0) (2021-03-12)
 
 
