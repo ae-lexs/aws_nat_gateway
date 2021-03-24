@@ -1,3 +1,11 @@
+# [1.5.0](https://github.com/ae-lexs/aws_nat_gateway/compare/v1.4.2...v1.5.0) (2021-03-24)
+
+
+### Features
+
+* Add initialize_terraform command. ([a514f61](https://github.com/ae-lexs/aws_nat_gateway/commit/a514f616138d94cc6c62de1a81d7ecd868dd3a70))
+* Add terrafor executor to CircleCI config. ([54ed738](https://github.com/ae-lexs/aws_nat_gateway/commit/54ed7388b670f74a6852ba8030d5627a5258b113))
+
 ## [1.4.2](https://github.com/ae-lexs/aws_nat_gateway/compare/v1.4.1...v1.4.2) (2021-03-12)
 
 
