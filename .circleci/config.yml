@@ -8,13 +8,27 @@ executors:
     docker:
       - image: docker.mirror.hashicorp.services/hashicorp/terraform:light
 
+commands:
+  initialize_terraform:
+    description: Initialize the terraform project
+    steps:
+      - run:
+          name: Terraform Version
+          command: terraform version
+      - run:
+          name: Terraform Init
+          command: terraform init
+      - run:
+          name: Terraform Get Local Modules
+          command: terraform get
+
 jobs:
   generate_release:
     executor: node
     steps:
       - checkout
       - run:
-          name: 'Generate Release'
+          name: Generate Release
           command: |
             sudo npm i -g @semantic-release/changelog @semantic-release/git semantic-release
             semantic-release          
@@ -23,8 +37,9 @@ jobs:
     executor: terraform
     steps:
       - checkout
+      - initialize_terraform
       - run:
-          name: 'Run the Terraform validator'
+          name: Terraform Validate
           command: terraform validate
 
 workflows:
