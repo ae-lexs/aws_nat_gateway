@@ -32,6 +32,73 @@ jobs:
           command: |
             sudo npm i -g @semantic-release/changelog @semantic-release/git semantic-release
             semantic-release          
+  
+  terraform_apply:
+    executor: terraform
+    steps:
+      - checkout
+      - initialize_terraform
+      - attach_workspace:
+          at: .
+      - run:
+          name: Terraform Apply
+          command: terraform apply -auto-approve tfapply
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .
+
+  terraform_destroy:
+    executor: terraform
+    steps:
+      - checkout
+      - initialize_terraform
+      - attach_workspace:
+          at: .
+      - run:
+          name: Terraform Apply
+          command: terraform apply -auto-approve tfdestroy
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .
+
+  terraform_plan_apply:
+    executor: terraform
+    steps:
+      - checkout
+      - initialize_terraform
+      - run:
+          name: Terraform Plan Apply
+          command: |
+            terraform plan \
+            -out tfapply \
+            -var aws_access_key_id=$AWS_ACCESS_KEY_ID \
+            -var aws_access_secret_key=$AWS_SECRET_ACCESS_KEY \
+            -var aws_profile_name=$AWS_PROFILE_NAME
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .
+
+  terraform_plan_destroy:
+    executor: terraform
+    steps:
+      - checkout
+      - initialize_terraform
+      - run:
+          name: Terraform Plan Destroy
+          command: |
+            terraform plan \
+            -destroy \
+            -out tfdestroy \
+            -var aws_access_key_id=$AWS_ACCESS_KEY_ID \
+            -var aws_access_secret_key=$AWS_SECRET_ACCESS_KEY \
+            -var aws_profile_name=$AWS_PROFILE_NAME
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .
 
   terraform_validate:
     executor: terraform
