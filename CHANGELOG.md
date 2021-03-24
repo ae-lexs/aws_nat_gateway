@@ -1,3 +1,11 @@
+# [1.6.0](https://github.com/ae-lexs/aws_nat_gateway/compare/v1.5.0...v1.6.0) (2021-03-24)
+
+
+### Features
+
+* Add production worflow and update development workflow. ([e7987d3](https://github.com/ae-lexs/aws_nat_gateway/commit/e7987d35ce7aa0a7818f628dd256d69b2be02109))
+* Add terraform_apply, terraform_destroy, terraform_plan_apply, and terraform_plan_destroy jobs to CircleCI config. ([ea0fa07](https://github.com/ae-lexs/aws_nat_gateway/commit/ea0fa078a1803ac6dc1623e98ad7e3230ec55e10))
+
 # [1.5.0](https://github.com/ae-lexs/aws_nat_gateway/compare/v1.4.2...v1.5.0) (2021-03-24)
 
 
