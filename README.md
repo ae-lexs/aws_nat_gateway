@@ -9,6 +9,8 @@ A simple VPC config with Private Subnets reaching the internet using a NAT Gatew
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Usage](#usage)
+- [Modules](#modules)
+- [Inputs](#inputs)
 - [Lincense](#license)
 
 ## Requirements
@@ -28,6 +30,13 @@ terraform init
 ```sh
 terraform get
 ```
+
+## Modules
+
+- [default_vpc_components](./modules/default_vpc_components/README.md)
+- [infrastructure_backup_bucket](./modules/infrastructure_backup_bucket/README.md)
+- [main_route_table](./modules/main_route_table/README.md)
+- [networking](./modules/networking/README.md)
 
 ## Inputs
 
