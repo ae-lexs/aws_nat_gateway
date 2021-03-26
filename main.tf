@@ -5,6 +5,12 @@ terraform {
       version = "~> 3.0"
     }
   }
+
+  backend "s3" {
+    bucket = "ae-lexs-aws-nat-gateway-infrastructure-backup"
+    key    = "terraform.tfstate"
+    region = "us-east-1"
+  }
 }
 
 provider "aws" {
@@ -15,7 +21,7 @@ provider "aws" {
 }
 
 module "infrastructure_backup_bucket" {
-  source  = "./modules/infrastructure_backup_bucket"
-  made_by = var.aws_profile_name
+  source      = "./modules/infrastructure_backup_bucket"
+  made_by     = var.aws_profile_name
   bucket_name = "ae-lexs-aws-nat-gateway-infrastructure-backup"
 }
