@@ -1,3 +1,13 @@
+# [1.7.0](https://github.com/ae-lexs/aws_nat_gateway/compare/v1.6.0...v1.7.0) (2021-03-26)
+
+
+### Features
+
+* Add infrastructure_backup_bucket module. ([1c8c3d9](https://github.com/ae-lexs/aws_nat_gateway/commit/1c8c3d95680b9e49eff08e5be60f5eea61b8aa49))
+* Add Modules section to the main README. ([b6054d6](https://github.com/ae-lexs/aws_nat_gateway/commit/b6054d688d73fc3632ae0f691fd5b608079e8c05))
+* Create a infrastructure_backup_bucket. ([06eb30d](https://github.com/ae-lexs/aws_nat_gateway/commit/06eb30de64a522b99bae45bee9c67614d2c7c5ac))
+* Set up the terraform backend. ([6b23329](https://github.com/ae-lexs/aws_nat_gateway/commit/6b2332925c7f3dbaf74649fb1b52bc4b76af0af8))
+
 # [1.6.0](https://github.com/ae-lexs/aws_nat_gateway/compare/v1.5.0...v1.6.0) (2021-03-24)
 
 
