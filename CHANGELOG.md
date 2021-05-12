@@ -1,3 +1,12 @@
+# [1.8.0](https://github.com/ae-lexs/aws_nat_gateway/compare/v1.7.0...v1.8.0) (2021-05-12)
+
+
+### Features
+
+* Add private_subnet_east_1c, private_subnet_east_1d and the required resources for private subnets. ([17b574c](https://github.com/ae-lexs/aws_nat_gateway/commit/17b574c51c3b4651473d1e0d9271f9a6cd70f14f))
+* Add public_subnet_east_1a, public_subnet_east_1b and the required resources for public subnets. ([13e1ced](https://github.com/ae-lexs/aws_nat_gateway/commit/13e1ced33a0d5a09689ff76c8864b429361dd4d2))
+* Use networking module. ([80dd491](https://github.com/ae-lexs/aws_nat_gateway/commit/80dd491074e2901311e9b82bc47578ef0cc6bd5f))
+
 # [1.7.0](https://github.com/ae-lexs/aws_nat_gateway/compare/v1.6.0...v1.7.0) (2021-03-26)
 
 
