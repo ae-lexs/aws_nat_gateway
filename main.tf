@@ -25,3 +25,8 @@ module "infrastructure_backup_bucket" {
   made_by     = var.aws_profile_name
   bucket_name = "ae-lexs-aws-nat-gateway-infrastructure-backup"
 }
+
+module "networking" {
+  source  = "./modules/networking"
+  made_by = var.aws_profile_name
+}
